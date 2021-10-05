@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="src/css/tailwind.css" rel="stylesheet" />
     <title>Data Kasus Harian Covid Indonesia</title>
+    <link rel="icon" href="favicon.ico" sizes="16x16" type="image/png" />
     <script src="chart.js"></script>
     <script src="moment.js"></script>
   </head>
@@ -51,7 +52,7 @@
                       text-sm
                       font-medium
                     "
-                    >Data</a
+                    >Data source</a
                   >
 
                   <a
@@ -171,11 +172,11 @@
                 text-base
                 font-medium
               "
-              >Team</a
+              >Data source</a
             >
 
             <a
-              href="#"
+              href="#author"
               class="
                 text-gray-300
                 hover:bg-gray-700 hover:text-white
@@ -186,37 +187,7 @@
                 text-base
                 font-medium
               "
-              >Projects</a
-            >
-
-            <a
-              href="#"
-              class="
-                text-gray-300
-                hover:bg-gray-700 hover:text-white
-                block
-                px-3
-                py-2
-                rounded-md
-                text-base
-                font-medium
-              "
-              >Calendar</a
-            >
-
-            <a
-              href="#"
-              class="
-                text-gray-300
-                hover:bg-gray-700 hover:text-white
-                block
-                px-3
-                py-2
-                rounded-md
-                text-base
-                font-medium
-              "
-              >Reports</a
+              >Author</a
             >
           </div>
         </div>
@@ -229,25 +200,46 @@
               <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
             </div>
           </header>
-          <div>
-            <canvas class="ratioChart shadow mb-20"></canvas>
+          <div class="my-5">
+            <select
+              class="py-2 px-5 shadow"
+              id="data-selector"
+              onchange="graph()"
+            >
+              <option value="1" selected>Semua</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+            </select>
+          </div>
+          <div id="arrChart">
+            <canvas id="ratioChart" class="shadow mb-20"></canvas>
             <canvas class="caseChart shadow mb-20"></canvas>
             <canvas class="tesChart shadow mb-20"></canvas>
           </div>
+          <hr />
 
           <header id="data" class="bg-white">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-              <h1 class="text-3xl font-bold text-gray-900">Data</h1>
+              <h1 class="text-3xl font-bold text-gray-900">Data source</h1>
             </div>
           </header>
-          <div>Ini datanya</div>
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="https://ourworldindata.org/"
+              >https://ourworldindata.org/</a
+            >
+          </div>
 
           <header id="author" class="bg-white">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
               <h1 class="text-3xl font-bold text-gray-900">Author</h1>
             </div>
           </header>
-          <div>Ini aku</div>
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ul class="text-lg text-gray-700">
+              <li>Fatkhul Mukhlish A</li>
+              <li>Viona Febriana</li>
+            </ul>
+          </div>
           <!-- /End replace -->
         </div>
       </main>
