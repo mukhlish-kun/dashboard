@@ -209,6 +209,7 @@ async function drawChart(title, titleline, xtitle, ytitle, click) {
         data: linearModel(bouncer(datapoint.ratio)),
         borderColor: "#bc5090",
         backgroundColor: "#bc5090",
+        borderDash: [5, 5],
         fill: false,
         cubicInterpolationMode: "monotone",
       },
@@ -217,6 +218,7 @@ async function drawChart(title, titleline, xtitle, ytitle, click) {
         data: quadraticModel(bouncer(datapoint.ratio)),
         borderColor: "#ffa600",
         backgroundColor: "#ffa600",
+        borderDash: [20, 10],
         fill: false,
         cubicInterpolationMode: "monotone",
       },
@@ -228,6 +230,11 @@ async function drawChart(title, titleline, xtitle, ytitle, click) {
     type: "line",
     data: data,
     options: {
+      elements: {
+        point: {
+          radius: 0,
+        },
+      },
       aspectRatio: 1.4,
       responsive: true,
       plugins: {
@@ -299,6 +306,11 @@ async function drawSingleChart(
     type: "line",
     data: data,
     options: {
+      elements: {
+        point: {
+          radius: 0,
+        },
+      },
       responsive: true,
       aspectRatio: 1.4,
       plugins: {
